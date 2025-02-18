@@ -11,7 +11,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+html, body{
+  background-color: #30343f;
+  margin: 0;
+  height: 100%;
+}
 
 header{
   background-color: #004792;
@@ -50,10 +54,40 @@ ul li{
   cursor: pointer;
   transition: 0.3s;
 }
+ h1{
+  font-size: 40px;
+  font-weight: 700;
+  color: #004792;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: 120px;
+  margin-bottom: 50px;
+  text-align: center;
 
+ }
+ p{
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+ }
 
-
-
+footer{
+  background-color: #004792;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  width: 99%;
+  height: 9%;
+  accent-color: #E1673C;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  left: 0;;
+  border-top: 8px solid #E1673C;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
