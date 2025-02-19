@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import budgetTracker from "C:\Users\allen\portfolio\portfolio-p\portfolio-v\src\assets\budget-tracker-pic.png";
 
 function Header() {
   return (
@@ -44,6 +42,45 @@ function About() {
 }
 
 function Portfolio() {
+  const projects = [
+    {
+      id: 1,
+      title: "Project 1",
+      imageUrl: "budgetTracker",
+      description: "This is a description of project 1.",
+    },
+    {
+      id: 2,
+      title: "Project 2",
+      imageUrl: "",
+      description: "This is a description of project 2.",
+    },
+    {
+      id: 3,
+      title: "Project 3",
+      imageUrl: "",
+      description: "This is a description of project 3.",
+    },
+    {
+      id: 4,
+      title: "Project 4",
+      imageUrl: "",
+      description: "This is a description of project 4.",
+    },
+    {
+      id: 5,
+      title: "Project 5",
+      imageUrl: "",
+      description: "This is a description of project 5.",
+    
+    },
+    {
+      id: 6,
+      title: "Project 6",
+      imageUrl: "",
+      description: "This is a description of project 6.",
+    }
+  ];
   return (
     <section className="portfolio">
       <h1>Portfolio</h1>
@@ -68,7 +105,7 @@ function Resume() {
     <section className="resume">
       <h1>Resume</h1>
       <p>Here is my resume with all the relevant details about my work experience and education.</p>
-      {/* Add resume info here */}
+      
     </section>
   );
 }
