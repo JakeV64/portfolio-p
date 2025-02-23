@@ -113,6 +113,67 @@ footer{
 }
 
 
+.contact {
+  padding: 24px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.contact p {
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.contact button:hover {
+  background-color: #1e40af;
+}
+
+
 
 
 @media (prefers-color-scheme: light) {

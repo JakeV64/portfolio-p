@@ -3,6 +3,8 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
+
+
 function Header() {
   return (
     <header>
@@ -103,14 +105,83 @@ function Portfolio() {
 }
 
 function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // Clear error when typing
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newErrors = {};
+
+    if (!formData.name) newErrors.name = "Name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.message) newErrors.message = "Message is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    alert("Form submitted successfully!");
+  };
+
   return (
-    <section className="contact">
-      <h1>Contact</h1>
-      <p>Feel free to reach out to me through any of the methods below.</p>
-      
+    <section className="contact p-6 bg-gray-100 rounded-xl shadow-lg max-w-lg mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Contact</h1>
+      <p className="mb-4">Feel free to reach out to me through any of the methods below.</p>
+
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <label className="flex flex-col">
+          <span className="font-medium">Name</span>
+          <input
+            type="text"
+            name="name"
+            className="p-2 border border-gray-300 rounded-lg"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
+        </label>
+
+        <label className="flex flex-col">
+          <span className="font-medium">Email</span>
+          <input
+            type="email"
+            name="email"
+            className="p-2 border border-gray-300 rounded-lg"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
+        </label>
+
+        <label className="flex flex-col">
+          <span className="font-medium">Message</span>
+          <textarea
+            name="message"
+            className="p-2 border border-gray-300 rounded-lg"
+            placeholder="Your Message"
+            rows="4"
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+          {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
+        </label>
+
+        <button type="submit" className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition">
+          Send Message
+        </button>
+      </form>
     </section>
   );
 }
+
 
 function Resume() {
   return (
